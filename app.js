@@ -46,7 +46,10 @@ async function getWaves() {
   //console.log(waveSizeDay);
   const highestWave = Math.max(...allWaveData);
   const smallestWave = Math.min(...allWaveData);
-  pElement.innerText = `Today's biggest wave in Newquay is ${highestWave} m and the smallest is ${smallestWave} m`;
+  pElement.innerText = `Today
+  Fistral Beach - Newquay 
+   biggest 🌊 ${highestWave} m 
+   smallest 🌊 ${smallestWave} m`;
 }
 
 buttonElement.addEventListener("click", getWaves);
