@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #bd9568;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serifS;
+}
+
+.text-field {
+  margin-top: 100px;
+  width: 600px;
+  height: 250px;
+  background-color: #006899;
+  padding: 20px 80px 20px 20px;
+  border-radius: 15px;
+  transition: all 0.5s;
+  clip-path: circle(5% at 50% 50%);
+}
+
+p {
+  font-size: 18px;
+
+  color: 006899;
+}
+
+.text-field:hover {
+  clip-path: circle(70%);
+}
+
+a {
+  text-decoration: none;
+  margin-top: 600px;
+  padding: 15px 30px;
+  color: #006899;
+  font-size: 18px;
+  letter-spacing: 3px;
+  border: 2px solid #006899;
+  text-transform: uppercase;
+  position: fixed;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+a:hover {
+  color: #400404;
+}
+
+.wave {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: calc(100% + 22px);
+  background-color: #00aeff;
+  transition: all 1s;
+  z-index: -1;
+}
+
+a:hover .wave {
+  top: 0;
+}
+
+.wave:before {
+  content: " ";
+  position: absolute;
+  top: -22px;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  background: url(./wave.png);
+  animation: wavy 0.5s linear infinite;
+}
+
+@keyframes wavy {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 118px;
+  }
+}
