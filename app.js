@@ -12,29 +12,29 @@
 // keep it simpple
 
 // ----- Wave size api---only 50 calls a day for free usage and only 1 specific location can be fetched, newquay has been selected)
-const lat = 50.4163;
-const lng = -5.1001;
-const params = "waveHeight";
-const pElement = document.querySelector("#wave-size");
-const buttonElement = document.querySelector("#button");
-const textElement = document.querySelector(".text-field");
+const lat = 50.4163
+const lng = -5.1001
+const params = 'waveHeight'
+const pElement = document.querySelector('#wave-size')
+const buttonElement = document.querySelector('#button')
+const textElement = document.querySelector('.text-field')
 
 async function getWaves() {
   const response = await fetch(
     `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`,
     {
       headers: {
-        Authorization:
-          "16c56b64-f855-11eb-9f40-0242ac130002-16c56bdc-f855-11eb-9f40-0242ac130002",
+        Authorization: `f3c71ae4-2816-11ec-93db-0242ac130002-f3c71b5c-2816-11ec-93db-0242ac130002`,
       },
     }
-  );
+  )
 
-  const data = await response.json();
+  const data = await response.json()
+  console.log(data)
   //console.log(data);
   //const waveData = data.hours[0].waveHeight.noaa;
   //console.log(waveData);
-  const allWaveData = data.hours.map((x) => x.waveHeight.noaa);
+  const allWaveData = data.hours.map((x) => x.waveHeight.noaa)
   //console.log(allWaveData);
   //let waveSize = waveData.waveHeight;
   //console.log(waveSize);
@@ -44,12 +44,11 @@ async function getWaves() {
   //console.log(waveAverage);
   //const waveSizeDay = Math.round(waveAverage);
   //console.log(waveSizeDay);
-  const highestWave = Math.max(...allWaveData);
-  const smallestWave = Math.min(...allWaveData);
-  pElement.innerText = `Today
-  Fistral Beach - Newquay 
-   biggest 🌊 ${highestWave} m 
-   smallest 🌊 ${smallestWave} m`;
+  const highestWave = Math.max(...allWaveData)
+  const smallestWave = Math.min(...allWaveData)
+  pElement.innerText = `Today Fistral Beach - Newquay 
+  biggest 🌊 ${highestWave} m  
+  smallest 🌊 ${smallestWave} m`
 }
 
-buttonElement.addEventListener("click", getWaves);
+buttonElement.addEventListener('click', getWaves)
