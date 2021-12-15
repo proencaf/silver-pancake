@@ -34,7 +34,7 @@ async function getWaves() {
   //console.log(data);
   //const waveData = data.hours[0].waveHeight.noaa;
   //console.log(waveData);
-  const allWaveData = data.hours.map((x) => x.waveHeight.noaa)
+  const allWaveData = data.hours.map((x) => x.waveHeight.sg)
   //console.log(allWaveData);
   //let waveSize = waveData.waveHeight;
   //console.log(waveSize);
